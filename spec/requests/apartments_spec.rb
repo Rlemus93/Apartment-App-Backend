@@ -105,8 +105,18 @@ RSpec.describe "Apartments", type: :request do
           user_id: user.id
         }
       }
+      apartment = Apartment.where(street: 'Test Street for patch').first
+      expect(apartment.street).to eq('Test Street for patch')
+      expect(apartment.unit).to eq('Test Unit for patch')
+      expect(apartment.city).to eq('Test City for patch')
+      expect(apartment.state).to eq('Test State for patch')
+      expect(apartment.square_footage).to eq(1500)
+      expect(apartment.price).to eq('$1000 for patch')
+      expect(apartment.bedrooms).to eq(3)
+      expect(apartment.bathrooms).to eq(3.0)
+      expect(apartment.pets).to eq('Test Pets for patch')
+      expect(apartment.image).to eq('https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg')
       expect(response).to have_http_status(200)
-      expect(apartment).to be_valid
     end
 
     it 'returns an http status error for an invalid ' do
