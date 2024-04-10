@@ -6,3 +6,4 @@ class CreateJwtDenylists < ActiveRecord::Migration[7.1]
     end
     add_index :jwt_denylist, :jti
   end
+end
