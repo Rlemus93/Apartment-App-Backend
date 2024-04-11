@@ -179,5 +179,4 @@ RSpec.describe "Apartments", type: :request do
     expect(apartment).to eq(nil)
     end
   end
-
 end
