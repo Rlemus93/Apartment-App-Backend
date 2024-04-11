@@ -59,11 +59,9 @@ apartments_two = [
 
 apartments.each do |apartment|
   user1.apartments.create(apartment)
-  # puts "Creating: #{apartment}"
 end
 
 apartments_two.each do |apartment|
   user2.apartments_two.create(apartment)
-  # puts "Creating: #{apartment}"
 end
 
