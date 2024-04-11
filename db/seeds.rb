@@ -13,7 +13,6 @@ apartments = [
     bathrooms: 1.0,
     pets: 'no pets allowed',
     image: 'https://www.hollywoodreporter.com/wp-content/uploads/2015/06/seinfeld_apt.jpg',
-    user_id: user1
   },
 
   {
@@ -27,9 +26,10 @@ apartments = [
     bathrooms: 11.0,
     pets: 'pets allowed',
     image: 'https://www.zillow.com/homedetails/217-W-57th-St-PH-New-York-NY-10019/2067603580_zpid/',
-    user_id: user1
-  },
+  }
+]
 
+apartments_two = [
   {
     street: '114 Calle Catalina',
     unit: 'PL',
@@ -41,7 +41,6 @@ apartments = [
     bathrooms: 4,
     pets: 'pets allowed',
     image: 'https://www.zillow.com/homedetails/114-Calle-Catalina-Pl-Houston-TX-77007/123237523_zpid/',
-    user_id: user2
   },
 
   {
@@ -55,14 +54,16 @@ apartments = [
     bathrooms: 3.5,
     pets: 'pets allowed',
     image: 'https://www.zillow.com/homedetails/622-Pink-Azalea-Trl-Houston-TX-77079/118162425_zpid/',
-    user_id: user2
   }
 ]
 
 apartments.each do |apartment|
   user1.apartments.create(apartment)
-  puts "Creating: #{apartment}"
-  user2.apartments.create(apartment)
-  puts "Creating: #{apartment}"
+  # puts "Creating: #{apartment}"
+end
+
+apartments_two.each do |apartment|
+  user2.apartments_two.create(apartment)
+  # puts "Creating: #{apartment}"
 end
 
