@@ -20,6 +20,7 @@ RSpec.describe Apartment, type: :model do
       bathrooms: 1.0,
       pets: 'Test Pets',
       image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+      about: 'test about',
     )
     expect(apartment).to be_valid
   end
@@ -35,6 +36,7 @@ RSpec.describe Apartment, type: :model do
       bathrooms: 1.0,
       pets: 'Test Pets',
       image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+      about: 'test about',
     )
     expect(apartment).not_to be_valid
     expect(apartment.errors[:street].first).to eq("can't be blank")
@@ -51,6 +53,7 @@ RSpec.describe Apartment, type: :model do
       bathrooms: 1.0,
       pets: 'Test Pets',
       image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+      about: 'test about',
     )
     expect(apartment).not_to be_valid
     expect(apartment.errors[:unit].first).to eq("can't be blank")
@@ -67,6 +70,7 @@ RSpec.describe Apartment, type: :model do
       bathrooms: 1.0,
       pets: 'Test Pets',
       image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+      about: 'test about',
     )
     expect(apartment).not_to be_valid
     expect(apartment.errors[:city].first).to eq("can't be blank")
@@ -83,6 +87,7 @@ RSpec.describe Apartment, type: :model do
       bathrooms: 1.0,
       pets: 'Test Pets',
       image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+      about: 'test about',
     )
     expect(apartment).not_to be_valid
     expect(apartment.errors[:state].first).to eq("can't be blank")
@@ -99,6 +104,7 @@ RSpec.describe Apartment, type: :model do
       bathrooms: 1.0,
       pets: 'Test Pets',
       image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+      about: 'test about',
     )
     expect(apartment).not_to be_valid
     expect(apartment.errors[:square_footage].first).to eq("can't be blank")
@@ -115,6 +121,7 @@ RSpec.describe Apartment, type: :model do
       bathrooms: 1.0,
       pets: 'Test Pets',
       image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+      about: 'test about',
     )
     expect(apartment).not_to be_valid
     expect(apartment.errors[:price].first).to eq("can't be blank")
@@ -131,6 +138,7 @@ RSpec.describe Apartment, type: :model do
       bathrooms: 1.0,
       pets: 'Test Pets',
       image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+      about: 'test about',
     )
     expect(apartment).not_to be_valid
     expect(apartment.errors[:bedrooms].first).to eq("can't be blank")
@@ -147,6 +155,7 @@ RSpec.describe Apartment, type: :model do
       bedrooms: 1,
       pets: 'Test Pets',
       image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+      about: 'test about',
     )
     expect(apartment).not_to be_valid
     expect(apartment.errors[:bathrooms].first).to eq("can't be blank")
@@ -163,6 +172,7 @@ RSpec.describe Apartment, type: :model do
       bedrooms: 1,
       bathrooms: 1.0,
       image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+      about: 'test about',
     )
     expect(apartment).not_to be_valid
     expect(apartment.errors[:pets].first).to eq("can't be blank")
@@ -179,8 +189,26 @@ RSpec.describe Apartment, type: :model do
       bedrooms: 1,
       bathrooms: 1.0,
       pets: 'Test Pets',
+      about: 'test about',
     )
     expect(apartment).not_to be_valid
     expect(apartment.errors[:image].first).to eq("can't be blank")
+  end
+
+  it 'is not valid without an about attribute' do
+    apartment = user.apartments.create(
+      street: 'Test Street',
+      unit: 'Test Unit',
+      city: 'Test City',
+      state: 'Test State',
+      square_footage: 1000,
+      price: '$1000',
+      bedrooms: 1,
+      bathrooms: 1.0,
+      pets: 'Test Pets',
+      image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+    )
+    expect(apartment).not_to be_valid
+    expect(apartment.errors[:about].first).to eq("can't be blank")
   end
 end
