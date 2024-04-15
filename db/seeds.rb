@@ -13,6 +13,7 @@ apartments = [
     bathrooms: 1.0,
     pets: 'no pets allowed',
     image: 'https://www.hollywoodreporter.com/wp-content/uploads/2015/06/seinfeld_apt.jpg',
+    about: 'this is a fake about section for this house each of these will be different'
   },
 
   {
@@ -26,6 +27,7 @@ apartments = [
     bathrooms: 11.0,
     pets: 'pets allowed',
     image: 'https://www.zillow.com/homedetails/217-W-57th-St-PH-New-York-NY-10019/2067603580_zpid/',
+    about: 'this is a fake about section for this house each of these will be different. this is a different fake one so its not the same'
   }
 ]
 
@@ -41,6 +43,7 @@ apartments_two = [
     bathrooms: 4,
     pets: 'pets allowed',
     image: 'https://www.zillow.com/homedetails/114-Calle-Catalina-Pl-Houston-TX-77007/123237523_zpid/',
+    about: 'this is a fake about section for this house each of these will be different. this is a different fake one so its not the same. another different one'
   },
 
   {
@@ -54,6 +57,7 @@ apartments_two = [
     bathrooms: 3.5,
     pets: 'pets allowed',
     image: 'https://www.zillow.com/homedetails/622-Pink-Azalea-Trl-Houston-TX-77079/118162425_zpid/',
+    about: 'this is a fake about section for this house each of these will be different. this is a different fake one so its not the same. another different one. and another'
   }
 ]
 

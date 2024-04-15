@@ -20,7 +20,8 @@ RSpec.describe "Apartments", type: :request do
         bedrooms: 1,
         bathrooms: 1.0,
         pets: 'Test Pets',
-        image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg'
+        image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+        about: 'test about',
       )
       get apartments_path
       expect(response).to have_http_status(200)
@@ -42,6 +43,7 @@ RSpec.describe "Apartments", type: :request do
           bathrooms: 1.0,
           pets: 'Test Pets',
           image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+          about: 'test about',
           user_id: user.id
         }
       }
@@ -63,6 +65,7 @@ RSpec.describe "Apartments", type: :request do
           bathrooms: nil,
           pets: nil,
           image: nil,
+          about: nil,
           user_id: nil
         }
       }
@@ -86,6 +89,7 @@ RSpec.describe "Apartments", type: :request do
           bathrooms: 11.0,
           pets: 'Test Pets1',
           image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+          about: 'test about',
           user_id: user.id
         }
       }
@@ -102,6 +106,7 @@ RSpec.describe "Apartments", type: :request do
           bathrooms: 3.0,
           pets: 'Test Pets for patch',
           image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+          about: 'test about',
           user_id: user.id
         }
       }
@@ -116,6 +121,7 @@ RSpec.describe "Apartments", type: :request do
       expect(apartment.bathrooms).to eq(3.0)
       expect(apartment.pets).to eq('Test Pets for patch')
       expect(apartment.image).to eq('https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg')
+      expect(apartment.about).to eq('test about')
       expect(response).to have_http_status(200)
     end
 
@@ -132,6 +138,7 @@ RSpec.describe "Apartments", type: :request do
           bathrooms: 3.0,
           pets: 'Test Pets for patch',
           image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+          about: 'test about',
           user_id: user.id
         }
       }
@@ -151,6 +158,7 @@ RSpec.describe "Apartments", type: :request do
           bathrooms: nil,
           pets: nil,
           image: nil,
+          about: nil,
           user_id: user.id
         }
       }
@@ -172,6 +180,7 @@ RSpec.describe "Apartments", type: :request do
       bathrooms: 9.0,
       pets: 'Test Pets for delete',
       image: 'https://c8.alamy.com/comp/B0RJGE/small-bungalow-home-with-pathway-in-addlestone-surrey-uk-B0RJGE.jpg',
+      about: 'test about',
       user_id: user.id
     )
     delete apartment_path(apartment)
