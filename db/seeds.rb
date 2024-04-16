@@ -66,6 +66,6 @@ apartments.each do |apartment|
 end
 
 apartments_two.each do |apartment|
-  user2.apartments_two.create(apartment)
+  user2.apartments.create(apartment)
 end
 
